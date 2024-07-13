@@ -24,7 +24,7 @@ function playRound(humanChoice, computerChoice) {
             humanScore++;
             console.log("You are the winner of the round");
         } else {
-            computerChoice++;
+            computerScore++;
             console.log("You lose! " + computerChoice + " beats " + humanChoice);
         }
     }
