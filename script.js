@@ -21,8 +21,10 @@ function playRound(humanChoice, computerChoice) {
         console.log("No winner.");
     } else {
         if (humanChoice === "paper" && computerChoice === "rock" || humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper") {
+            humanScore++;
             console.log("You are the winner of the round");
         } else {
+            computerChoice++;
             console.log("You lose! " + computerChoice + " beats " + humanChoice);
         }
     }
