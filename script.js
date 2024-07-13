@@ -35,7 +35,7 @@ function playGame() {
         (humanChoice === "scissors" && computerChoice === "paper")
       ) {
         humanScore++;
-        console.log("You are the winner of the round");
+        console.log("You are the winner. " + humanChoice + " beats " + computerChoice);
       } else {
         computerScore++;
         console.log("You lose! " + computerChoice + " beats " + humanChoice);
