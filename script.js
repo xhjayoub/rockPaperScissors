@@ -20,26 +20,37 @@ function getHumanChoice() {
     : getHumanChoice();
 }
 
-// Function playRound
-// Play a round and increment winner score
-function playRound(humanChoice, computerChoice) {
-  if (humanChoice === computerChoice) {
-    console.log("No winner.");
-  } else {
-    if (
-      (humanChoice === "paper" && computerChoice === "rock") ||
-      (humanChoice === "rock" && computerChoice === "scissors") ||
-      (humanChoice === "scissors" && computerChoice === "paper")
-    ) {
-      humanScore++;
-      console.log("You are the winner of the round");
+// Function playGame
+// Play the rock paper scissors
+function playGame() {
+  // Function playRound
+  // Play a round and increment winner score
+  function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+      console.log("No winner.");
     } else {
-      computerScore++;
-      console.log("You lose! " + computerChoice + " beats " + humanChoice);
+      if (
+        (humanChoice === "paper" && computerChoice === "rock") ||
+        (humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "scissors" && computerChoice === "paper")
+      ) {
+        humanScore++;
+        console.log("You are the winner of the round");
+      } else {
+        computerScore++;
+        console.log("You lose! " + computerChoice + " beats " + humanChoice);
+      }
     }
   }
+  // Scores
+  let humanScore = 0;
+  let computerScore = 0;
+
+  playRound(getHumanChoice(),getComputerChoice());
+  playRound(getHumanChoice(),getComputerChoice());
+  playRound(getHumanChoice(),getComputerChoice());
+  playRound(getHumanChoice(),getComputerChoice());
+  playRound(getHumanChoice(),getComputerChoice());
 }
 
-// Scores
-let humanScore = 0;
-let computerScore = 0;
+playGame();
