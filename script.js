@@ -13,3 +13,8 @@ function getHumanChoice() {
     
     return (userChoice === "rock") ? "rock" : (userChoice === "paper") ? "paper": (userChoice === "scissors") ? "scissors" : undefined;
 }
+
+
+// Scores
+let humanScore = 0;
+let computerScore = 0;
