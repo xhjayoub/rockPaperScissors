@@ -11,7 +11,7 @@ function getComputerChoice() {
 function getHumanChoice() {
     let userChoice = prompt("Choose 'rock','paper' or 'scissors'");
     
-    return (userChoice === "rock") ? "rock" : (userChoice === "paper") ? "paper": (userChoice === "scissors") ? "scissors" : undefined;
+    return (userChoice.toLowerCase() === "rock") ? "rock" : (userChoice.toLowerCase() === "paper") ? "paper": (userChoice.toLowerCase() === "scissors") ? "scissors" : undefined;
 }
 
 // Function playRound
