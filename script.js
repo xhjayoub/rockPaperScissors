@@ -14,6 +14,20 @@ function getHumanChoice() {
     return (userChoice === "rock") ? "rock" : (userChoice === "paper") ? "paper": (userChoice === "scissors") ? "scissors" : undefined;
 }
 
+// Function playRound
+// Play a round and increment winner score
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        console.log("No winner.");
+    } else {
+        if (humanChoice === "paper" && computerChoice === "rock" || humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "scissors" && computerChoice === "paper") {
+            console.log("You are the winner of the round");
+        } else {
+            console.log("You lose! " + computerChoice + " beats " + humanChoice);
+        }
+    }
+}
+
 
 // Scores
 let humanScore = 0;
