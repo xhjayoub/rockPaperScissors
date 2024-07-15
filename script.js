@@ -60,6 +60,9 @@ scissorsbtn.addEventListener("click", () => playRound("scissors",getComputerChoi
 
 
 const body = document.querySelector("body");
-body.appendChild(rockbtn);
-body.appendChild(paperbtn);
-body.appendChild(scissorsbtn);
+const divSelection = document.createElement("div");
+
+divSelection.appendChild(rockbtn);
+divSelection.appendChild(paperbtn);
+divSelection.appendChild(scissorsbtn);
+body.appendChild(divSelection);
