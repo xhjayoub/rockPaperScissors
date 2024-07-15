@@ -25,6 +25,8 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
   const status = document.querySelector(".status");
   const p = document.createElement("p");
+  const hmScore = document.querySelector("#hmScore");
+  const cpScore = document.querySelector("#cpScore");
   if (humanChoice === computerChoice) {
     p.textContent = "No winner.";
   } else {
@@ -40,6 +42,8 @@ function playRound(humanChoice, computerChoice) {
       p.textContent = "You lose! " + computerChoice + " beats " + humanChoice;
     }
   }
+  hmScore.textContent = "Your score : " + humanScore;
+  cpScore.textContent = "Computer score : " + computerScore;
   status.appendChild(p);
 }
 
