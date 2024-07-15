@@ -70,4 +70,19 @@ body.appendChild(divSelection);
 
 const divStatus = document.createElement("div");
 divStatus.setAttribute("class","status");
+
+const divScores = document.createElement("div");
+divScores.setAttribute("class","scores");
+const hmScore = document.createElement("span");
+hmScore.setAttribute("id","hmScore");
+hmScore.textContent = "Your score : " + humanScore;
+
+const cpScore = document.createElement("span");
+cpScore.setAttribute("id","cpScore");
+cpScore.textContent = "Computer score : " + computerScore;
+divScores.appendChild(hmScore);
+divScores.appendChild(cpScore);
+divStatus.appendChild(divScores);
+
+
 body.appendChild(divStatus);
