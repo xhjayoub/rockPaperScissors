@@ -20,10 +20,7 @@ function getHumanChoice() {
     : getHumanChoice();
 }
 
-// Function playGame
-// Play the rock paper scissors
-function playGame() {
-  // Function playRound
+// Function playRound
   // Play a round and increment winner score
   function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
@@ -42,15 +39,5 @@ function playGame() {
       }
     }
   }
-  // Scores
-  let humanScore = 0;
-  let computerScore = 0;
 
-  playRound(getHumanChoice(),getComputerChoice());
-  playRound(getHumanChoice(),getComputerChoice());
-  playRound(getHumanChoice(),getComputerChoice());
-  playRound(getHumanChoice(),getComputerChoice());
-  playRound(getHumanChoice(),getComputerChoice());
-}
 
-playGame();
