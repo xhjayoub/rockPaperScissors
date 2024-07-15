@@ -42,12 +42,22 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
+// Scores
+let computerScore = 0;
+let humanScore = 0;
+
+
 const rockbtn = document.createElement("button");
 rockbtn.textContent = "Rock";
 const paperbtn = document.createElement("button");
 paperbtn.textContent = "Paper";
 const scissorsbtn = document.createElement("button");
 scissorsbtn.textContent = "Scissors";
+
+rockbtn.addEventListener("click", () => playRound("rock",getComputerChoice()));
+paperbtn.addEventListener("click", () => playRound("paper",getComputerChoice()));
+scissorsbtn.addEventListener("click", () => playRound("scissors",getComputerChoice()));
+
 
 const body = document.querySelector("body");
 body.appendChild(rockbtn);
