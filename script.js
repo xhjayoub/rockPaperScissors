@@ -9,16 +9,17 @@ function getComputerChoice() {
 function checkWinner(hmScore, cpScore) {
   if (hmScore>=5) {
     alert("YOU ARE THE WINNER!");
-    return;
+    return true;
   } else if (cpScore>=5) {
     alert("NAH YOU ARE A LOSER.");
-    return;
+    return true;
   }
 }
 // Function playRound
 // Play a round and increment winner score
 function playRound(humanChoice, computerChoice) {
-  const status = document.querySelector(".status");
+  const message = document.querySelector(".message");
+  message.innerHTML = "";
   const p = document.createElement("p");
   const hmScore = document.querySelector("#hmScore");
   const cpScore = document.querySelector("#cpScore");
@@ -39,8 +40,15 @@ function playRound(humanChoice, computerChoice) {
   }
   hmScore.textContent = "Your score : " + humanScore;
   cpScore.textContent = "Computer score : " + computerScore;
-  status.appendChild(p);
-  checkWinner(humanScore,computerScore);
+  message.appendChild(p);
+  let v = checkWinner(humanScore,computerScore);
+  if (v===true) {
+    const arrbtn = document.querySelectorAll("button");
+    arrbtn.forEach((e) => e.disabled = true);
+    const reloadPage = document.createElement("p");
+    reloadPage.textContent = "Reload the page to play again."
+    document.querySelector(".message").appendChild(reloadPage);
+  }
 }
 
 // Scores
@@ -83,6 +91,10 @@ cpScore.textContent = "Computer score : " + computerScore;
 divScores.appendChild(hmScore);
 divScores.appendChild(cpScore);
 divStatus.appendChild(divScores);
+
+const divMessage = document.createElement("div");
+divMessage.setAttribute("class","message");
+divStatus.appendChild(divMessage);
 
 
 body.appendChild(divStatus);
