@@ -6,20 +6,6 @@ function getComputerChoice() {
   return nr === 0 ? "rock" : nr === 1 ? "paper" : "scissors";
 }
 
-// Function getHumanChoice
-// Take user input and return it
-function getHumanChoice() {
-  let userChoice = prompt("Choose 'rock','paper' or 'scissors'");
-
-  return userChoice.toLowerCase() === "rock"
-    ? "rock"
-    : userChoice.toLowerCase() === "paper"
-    ? "paper"
-    : userChoice.toLowerCase() === "scissors"
-    ? "scissors"
-    : getHumanChoice();
-}
-
 // Function playRound
 // Play a round and increment winner score
 function playRound(humanChoice, computerChoice) {
