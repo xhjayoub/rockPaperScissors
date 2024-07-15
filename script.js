@@ -23,8 +23,10 @@ function getHumanChoice() {
 // Function playRound
 // Play a round and increment winner score
 function playRound(humanChoice, computerChoice) {
+  const status = document.querySelector(".status");
+  const p = document.createElement("p");
   if (humanChoice === computerChoice) {
-    console.log("No winner.");
+    p.textContent = "No winner.";
   } else {
     if (
       (humanChoice === "paper" && computerChoice === "rock") ||
@@ -32,14 +34,13 @@ function playRound(humanChoice, computerChoice) {
       (humanChoice === "scissors" && computerChoice === "paper")
     ) {
       humanScore++;
-      console.log(
-        "You are the winner. " + humanChoice + " beats " + computerChoice
-      );
+      p.textContent = "You are the winner. " + humanChoice + " beats " + computerChoice;
     } else {
       computerScore++;
-      console.log("You lose! " + computerChoice + " beats " + humanChoice);
+      p.textContent = "You lose! " + computerChoice + " beats " + humanChoice;
     }
   }
+  status.appendChild(p);
 }
 
 // Scores
@@ -66,3 +67,7 @@ divSelection.appendChild(rockbtn);
 divSelection.appendChild(paperbtn);
 divSelection.appendChild(scissorsbtn);
 body.appendChild(divSelection);
+
+const divStatus = document.createElement("div");
+divStatus.setAttribute("class","status");
+body.appendChild(divStatus);
