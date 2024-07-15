@@ -5,7 +5,16 @@ function getComputerChoice() {
   let nr = Math.floor(Math.random() * 3);
   return nr === 0 ? "rock" : nr === 1 ? "paper" : "scissors";
 }
-
+// Check winner
+function checkWinner(hmScore, cpScore) {
+  if (hmScore>=5) {
+    alert("YOU ARE THE WINNER!");
+    return;
+  } else if (cpScore>=5) {
+    alert("NAH YOU ARE A LOSER.");
+    return;
+  }
+}
 // Function playRound
 // Play a round and increment winner score
 function playRound(humanChoice, computerChoice) {
@@ -31,6 +40,7 @@ function playRound(humanChoice, computerChoice) {
   hmScore.textContent = "Your score : " + humanScore;
   cpScore.textContent = "Computer score : " + computerScore;
   status.appendChild(p);
+  checkWinner(humanScore,computerScore);
 }
 
 // Scores
