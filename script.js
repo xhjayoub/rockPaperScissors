@@ -21,23 +21,35 @@ function getHumanChoice() {
 }
 
 // Function playRound
-  // Play a round and increment winner score
-  function playRound(humanChoice, computerChoice) {
-    if (humanChoice === computerChoice) {
-      console.log("No winner.");
+// Play a round and increment winner score
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice === computerChoice) {
+    console.log("No winner.");
+  } else {
+    if (
+      (humanChoice === "paper" && computerChoice === "rock") ||
+      (humanChoice === "rock" && computerChoice === "scissors") ||
+      (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+      humanScore++;
+      console.log(
+        "You are the winner. " + humanChoice + " beats " + computerChoice
+      );
     } else {
-      if (
-        (humanChoice === "paper" && computerChoice === "rock") ||
-        (humanChoice === "rock" && computerChoice === "scissors") ||
-        (humanChoice === "scissors" && computerChoice === "paper")
-      ) {
-        humanScore++;
-        console.log("You are the winner. " + humanChoice + " beats " + computerChoice);
-      } else {
-        computerScore++;
-        console.log("You lose! " + computerChoice + " beats " + humanChoice);
-      }
+      computerScore++;
+      console.log("You lose! " + computerChoice + " beats " + humanChoice);
     }
   }
+}
 
+const rockbtn = document.createElement("button");
+rockbtn.textContent = "Rock";
+const paperbtn = document.createElement("button");
+paperbtn.textContent = "Paper";
+const scissorsbtn = document.createElement("button");
+scissorsbtn.textContent = "Scissors";
 
+const body = document.querySelector("body");
+body.appendChild(rockbtn);
+body.appendChild(paperbtn);
+body.appendChild(scissorsbtn);
